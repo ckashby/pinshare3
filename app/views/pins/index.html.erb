@@ -1,0 +1,12 @@
+<h1>Pins Index</h1>
+<% if @pins.any? %>
+  <ul>
+    <% @pins.each do |pin| %>
+      <li><%= image_tag pin.image.small_thumb.url %> | <%= link_to "Edit", edit_pin_path(pin) %> | <%= link_to "Delete", pin_path(pin), method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to pin.title, pin_path(pin) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are currently no pins</p>
+<% end %>
+
+<%= link_to "Home", root_path %> | <%= link_to "New Pin", new_pin_path %>
