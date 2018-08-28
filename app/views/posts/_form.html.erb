@@ -1,9 +1,10 @@
 <%= render 'shared/errors', object: @post %>
 
-<%= form_for @post do |f| %>
+<%= form_for @post, html: { multipart: true } do |f| %>
   <%= f.label :title %><br>
   <%= f.text_field :title, class: "form-control" %><br>
   <%= f.label :image %><br>
   <%= f.file_field :image, class: "form-control" %><br>
+  <%= f.hidden_field :image_cache %>
   <%= f.submit %>
 <% end %>
