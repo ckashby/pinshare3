@@ -12,7 +12,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to posts_path, notice: 'Post successfully saved.'
+      redirect_to post_path(@post), notice: 'Post successfully saved.'
     else
       render :new
     end
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to posts_path, notice: 'Post successfully updated.'
+      redirect_to post_path(@post), notice: 'Post successfully updated.'
     else
       render :edit
     end
