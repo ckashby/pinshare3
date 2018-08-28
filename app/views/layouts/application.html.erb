@@ -17,6 +17,10 @@
       <p class="alert"><%= alert %></p>
 
     <%= yield %>
+    <hr>
+    <% if user_signed_in? %>
+      Signed in as: <%= current_user.email %>
+    <% end %>
   </div>
 
   </body>
