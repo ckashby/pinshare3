@@ -1,3 +1,5 @@
+<%= render 'shared/errors', object: @post %>
+
 <%= form_for @post do |f| %>
   <%= f.label :title %><br>
   <%= f.text_field :title, class: "form-control" %><br>
