@@ -3,7 +3,7 @@
 <% if @posts.any? %>
 <ul>
   <% @posts.each do |post| %>
-    <li><%= link_to post.title, post_path(post) %></li>
+    <li><%= link_to post.title, post_path(post) %> | <%= link_to "Edit", edit_post_path(post) %> | <%= link_to "Delete", post_path(post), method: :delete, data: { confirm: 'Are you sure?'} %></li>
   <% end %>
   <% else %>
   <p>There are currently no posts.</p>
