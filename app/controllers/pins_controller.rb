@@ -1,5 +1,5 @@
 class PinsController < ApplicationController
-  before_action :find_pin, only: [:show, :edit, :update, :destroy]
+  before_action :find_pin, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 
 
   def index
@@ -36,7 +36,17 @@ class PinsController < ApplicationController
   def destroy
     @pin.destroy
     redirect_to pins_path, notice: 'Pin successfully deleted.'
-  end 
+  end
+
+  def upvote
+    @pin.upvote_by current_user
+    redirect_to pin_path(@pin), notice: 'Pin successfully up voted'
+  end
+
+  def downvote
+    @pin.downvote_by current_user
+    redirect_to pin_path(@pin), notice: 'Pin successfully down voted'
+  end
 
     private
 
