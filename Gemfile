@@ -21,6 +21,8 @@ gem 'devise', '~> 4.5'
 gem 'carrierwave', '~> 1.2', '>= 1.2.3'
 gem 'file_validators', '~> 2.3'
 gem 'acts_as_votable', '~> 0.11.1'
+gem 'masonry-rails'
+
 
 gem 'faker'
 # Use Uglifier as compressor for JavaScript assets
