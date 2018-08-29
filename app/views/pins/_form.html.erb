@@ -1,5 +1,7 @@
 <%= render 'shared/errors', object: @pin %>
 
+<%= image_tag(@pin.image.thumb.url, alt: "Image for pin") %>
+
 <%= form_for @pin, html: { multipart: true } do |f| %>
   <%= f.label :title %><br>
   <%= f.text_field :title, class: "form-control" %><br>
@@ -7,5 +9,3 @@
   <%= f.file_field :image, class: "form-control" %>
   <%= f.submit %>
 <% end %>
-
-<%= link_to "Back", pins_path %>
