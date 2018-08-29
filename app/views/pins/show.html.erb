@@ -3,6 +3,7 @@
 <%= link_to(image_tag(@pin.image.thumb.url, alt: 'Image'), @pin.image.url, target: '_blank') if @pin.image? %>
 
 <hr>
+Submitted by: <%= @pin.user.email %> <%= time_ago_in_words(@pin.created_at) %> ago.
 <%= link_to "Upvote", like_pin_path(@pin), method: :put %> |
 <%= link_to "Downvote", dislike_pin_path(@pin), method: :put %>
 <hr>

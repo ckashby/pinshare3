@@ -4,7 +4,8 @@
 <%= link_to "Sign Up", new_user_registration_path %> |
 <%= link_to "Sign In", new_user_session_path %> |
 <%= link_to "Posts", posts_path %> |
-<%= link_to "Pins", pins_path %> | 
+<%= link_to "Pins", pins_path %> |
+<%= link_to "Account", edit_user_registration_path %> | 
 <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
 
-<div class="alert alert-danger">Danger Will Robinson! Danger!</div>
+<div class="alert alert-info">Important message here...</div>
