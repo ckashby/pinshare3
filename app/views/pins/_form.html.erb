@@ -1,4 +1,6 @@
-<%= form_for @pin do |f| %>
+<%= render 'shared/errors', object: @pin %>
+
+<%= form_for @pin, html: { multipart: true } do |f| %>
   <%= f.label :title %><br>
   <%= f.text_field :title, class: "form-control" %><br>
   <%= f.label :image %><br>
